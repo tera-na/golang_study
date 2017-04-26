@@ -11,14 +11,17 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"bufio"
 	"github.com/adonovan/gopl.io/ch2/tempconv"
 )
 
 func main() {
-	value = os.Args[1:]
+	value := os.Args[1:]
 	if len(value) == 0 {
 		input := bufio.NewScanner(os.Stdin)
-		convCtoAny(input)
+		for input.Scan() {
+			convCtoAny(input.Text())
+		}
 	} else {
 		for _, arg := range os.Args[1:] {
 			convCtoAny(arg)
