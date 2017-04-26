@@ -1,1 +1,1 @@
-set GOPATH=c:\go\project\ch02\ex2
+go run main.go
