@@ -20,7 +20,6 @@ import (
 )
 
 func main() {
-//	http.HandleFunc("/", handler)
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		lissajous(w, r)
 	})

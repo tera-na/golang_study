@@ -12,8 +12,8 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"time"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -29,8 +29,8 @@ func main() {
 }
 
 func Exists(name string) bool {
-    _, err := os.Stat(name)
-    return !os.IsNotExist(err)
+	_, err := os.Stat(name)
+	return !os.IsNotExist(err)
 }
 
 func fetch(url string, ch chan<- string) {
