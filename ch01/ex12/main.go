@@ -7,15 +7,14 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
 	"image"
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
+	"net/http"
 	"strconv"
 )
 
@@ -35,7 +34,7 @@ const (
 
 func lissajous(out io.Writer, r *http.Request) {
 	var cycles int64
-	cycles = 5     // number of complete x oscillator revolutions
+	cycles = 5 // number of complete x oscillator revolutions
 	const (
 		res     = 0.001 // angular resolution
 		size    = 100   // image canvas covers [-size..+size]
@@ -43,8 +42,8 @@ func lissajous(out io.Writer, r *http.Request) {
 		delay   = 8     // delay between frames in 10ms units
 	)
 	val := r.Form.Get("cycles")
-	getint, err:= strconv.ParseInt(val, 10, 64)
-	if err==nil {
+	getint, err := strconv.ParseInt(val, 10, 64)
+	if err == nil {
 		cycles = getint
 	}
 
