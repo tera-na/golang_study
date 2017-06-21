@@ -1,0 +1,1 @@
+go run main.go 1234567 123
